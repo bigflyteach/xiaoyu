@@ -11,6 +11,10 @@ const lightboxNumber = document.querySelector('#lightboxNumber');
 const lightboxClose = document.querySelector('.look-lightbox-close');
 const lightboxPrev = document.querySelector('.look-lightbox-prev');
 const lightboxNext = document.querySelector('.look-lightbox-next');
+const guzhengAudio = document.querySelector('#guzhengAudio');
+const musicPlayer = document.querySelector('.music-player');
+const musicNow = document.querySelector('#musicNow');
+const trackButtons = document.querySelectorAll('.track-button');
 const wardrobeLooks = Array.from({ length: 53 }, (_, index) => ({
   number: index + 1,
   src: `assets/images/outfits/image${index + 1}.jpeg`,
@@ -50,6 +54,42 @@ document.querySelectorAll('.copy-button').forEach(button => {
     toast.classList.add('show');
     setTimeout(() => toast.classList.remove('show'), 1800);
   });
+});
+
+function stopMusic() {
+  guzhengAudio.pause();
+  musicPlayer.classList.remove('is-playing');
+  trackButtons.forEach(button => {
+    button.classList.remove('active');
+    button.querySelector('i').textContent = '播放';
+  });
+}
+
+trackButtons.forEach(button => {
+  button.addEventListener('click', async () => {
+    const isCurrent = button.classList.contains('active');
+    if (isCurrent && !guzhengAudio.paused) {
+      stopMusic();
+      musicNow.textContent = '已暂停，可选择另一段音乐试听';
+      return;
+    }
+    stopMusic();
+    guzhengAudio.src = button.dataset.src;
+    try {
+      await guzhengAudio.play();
+      button.classList.add('active');
+      button.querySelector('i').textContent = '暂停';
+      musicPlayer.classList.add('is-playing');
+      musicNow.textContent = `${button.querySelector('b').textContent} · 正在播放`;
+    } catch {
+      musicNow.textContent = '音频暂未就绪，请稍后再试';
+    }
+  });
+});
+
+guzhengAudio.addEventListener('ended', () => {
+  stopMusic();
+  musicNow.textContent = '本段试听结束，可选择另一首';
 });
 
 const observer = new IntersectionObserver(entries => {

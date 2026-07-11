@@ -34,6 +34,8 @@
         <img src="assets/images/01-首屏主视觉/hero.jpg" alt="">
       </div>
       <div class="hero-shade"></div>
+      <div class="auspicious-cloud cloud-hero-one" aria-hidden="true"><i></i><i></i><i></i></div>
+      <div class="auspicious-cloud cloud-hero-two" aria-hidden="true"><i></i><i></i><i></i></div>
       <div class="hero-content reveal">
         <p class="eyebrow">LIVE GUZHENG · CHINA</p>
         <h1>让东方的琴声，<br><em>成为现场的记忆。</em></h1>
@@ -60,6 +62,25 @@
           <p>从曲目节奏到服装颜色，从入场时机到舞台画面，都可以围绕您的活动主题共同确认。</p>
         </div>
         <div class="seal reveal"><span>筝</span><small>LIVE<br>ART</small></div>
+      </div>
+    </section>
+
+    <section class="music-section" aria-labelledby="music-title">
+      <div class="music-inner">
+        <div class="music-heading reveal">
+          <p class="section-kicker">LISTEN · GUZHENG SELECTIONS</p>
+          <h2 id="music-title">听一段筝声，<br>感受现场气质。</h2>
+          <p>三段演出选段，点击播放后才会开启声音；网页默认静音，不会自动播放。</p>
+        </div>
+        <div class="music-player reveal" aria-label="古筝曲目试听">
+          <div class="music-now"><span class="music-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><p id="musicNow">选择一段音乐试听</p></div>
+          <div class="track-list">
+            <button class="track-button" type="button" data-track="0" data-src="assets/audio/classic-selection.m4a"><span>01</span><b>经典韵律</b><small>古筝现场选段</small><i>播放</i></button>
+            <button class="track-button" type="button" data-track="1" data-src="assets/audio/pop-selection.m4a"><span>02</span><b>国风流行</b><small>古筝现场选段</small><i>播放</i></button>
+            <button class="track-button" type="button" data-track="2" data-src="assets/audio/familiar-selection.m4a"><span>03</span><b>熟悉旋律</b><small>古筝现场选段</small><i>播放</i></button>
+          </div>
+          <audio id="guzhengAudio" preload="none"></audio>
+        </div>
       </div>
     </section>
 
@@ -132,50 +153,11 @@
       </div>
     </section>
 
-    <section class="looks section" id="looks">
-      <div class="looks-copy reveal">
-        <p class="section-kicker">STYLING OPTIONS</p>
-        <h2>服装造型，<br>也是舞台语言。</h2>
-        <p>礼服、旗袍、汉服与主题妆造均可挑选。可依据活动主视觉、场地灯光与品牌色，沟通选择更贴合现场的造型方向。</p>
-        <button class="button button-outline js-contact">索取更多造型参考 <i>→</i></button>
-      </div>
-      <div class="look-gallery reveal">
-        <figure class="look-main">
-          <img src="assets/images/outfits/image1.jpeg" alt="小雨老师演出礼服造型">
-          <figcaption><span>01</span>礼服造型</figcaption>
-        </figure>
-        <figure>
-          <img src="assets/images/outfits/image12.jpeg" alt="小雨老师旗袍演出造型">
-          <figcaption><span>02</span>旗袍雅韵</figcaption>
-        </figure>
-        <figure>
-          <img src="assets/images/outfits/image20.jpeg" alt="小雨老师汉服演出造型">
-          <figcaption><span>03</span>汉服主题</figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <section class="wardrobe section section-dark" aria-labelledby="wardrobe-title">
-      <div class="section-head reveal">
-        <div>
-          <p class="section-kicker">SELECTABLE WARDROBE</p>
-          <h2 id="wardrobe-title">小雨的衣柜</h2>
-        </div>
-        <p>为不同主题准备的造型参考。确定活动调性后，可从现有服装中沟通挑选。</p>
-      </div>
-      <div class="wardrobe-grid">
-        <figure class="reveal"><img src="assets/images/outfits/image3.jpeg" alt="现代风格演出造型"><figcaption><span>01</span>现代礼服</figcaption></figure>
-        <figure class="reveal"><img src="assets/images/outfits/image10.jpeg" alt="春夏旗袍演出造型"><figcaption><span>02</span>春夏旗袍</figcaption></figure>
-        <figure class="reveal"><img src="assets/images/outfits/image17.jpeg" alt="秋冬汉服演出造型"><figcaption><span>03</span>秋冬汉服</figcaption></figure>
-        <figure class="reveal"><img src="assets/images/outfits/image29.jpeg" alt="刺绣重工演出造型"><figcaption><span>04</span>刺绣重工</figcaption></figure>
-      </div>
-    </section>
-
-    <section class="wardrobe-library section" id="wardrobe-library" aria-labelledby="wardrobe-library-title">
+    <section class="wardrobe-library section" id="looks" aria-labelledby="wardrobe-library-title">
       <div class="wardrobe-library-head reveal">
         <div>
           <p class="section-kicker">THE COMPLETE COLLECTION · 53 LOOKS</p>
-          <h2 id="wardrobe-library-title">完整衣柜，<br>慢慢挑选。</h2>
+          <h2 id="wardrobe-library-title">服装造型，<br>慢慢挑选。</h2>
         </div>
         <div class="wardrobe-library-note">
           <p>这里收录全部服装造型。点击任意照片即可放大查看，记下图片编号后，可在沟通时快速确认您偏好的演出造型。</p>
