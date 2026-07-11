@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="马梦雨古筝商演曲库，涵盖婚礼喜宴、国风雅韵、武侠燃场、流行经典与轻快互动曲目。">
+  <meta name="theme-color" content="#17130f">
+  <title>演奏曲库｜马梦雨古筝商演</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="repertoire-page">
+  <div class="grain" aria-hidden="true"></div>
+  <header class="site-header repertoire-header">
+    <a class="brand" href="index.html" aria-label="返回首页">
+      <span class="brand-mark">梦</span>
+      <span><b>马梦雨</b><small>GUZHENG ARTIST</small></span>
+    </a>
+    <nav aria-label="曲库导航">
+      <a href="index.html#works">演出影像</a>
+      <a class="active" href="repertoire.html">曲目单</a>
+      <a href="index.html#scenes">合作场景</a>
+      <a href="index.html#looks">服装造型</a>
+      <a href="index.html#about">关于我</a>
+    </nav>
+    <a class="header-cta" href="index.html?contact=1">咨询档期</a>
+  </header>
+
+  <main>
+    <section class="repertoire-hero">
+      <div class="repertoire-hero-image"></div>
+      <div class="repertoire-hero-content reveal">
+          <p class="eyebrow">GUZHENG PERFORMANCE REPERTOIRE</p>
+        <h1>一席筝音，<br><em>百般意境。</em></h1>
+        <p>从含蓄婉转到热烈明快，根据活动流程、空间气质与宾客构成，挑选更适合现场的曲目组合。</p>
+      </div>
+      <div class="repertoire-stats reveal">
+        <div><b id="songTotal">60</b><span>首曲目参考</span></div>
+        <div><b>08</b><span>类曲目方向</span></div>
+        <div><b>01</b><span>套专属歌单</span></div>
+      </div>
+    </section>
+
+    <section class="library section">
+      <div class="library-intro reveal">
+        <div>
+          <p class="section-kicker">CURATED FOR YOUR EVENT</p>
+          <h2>选择现场的情绪</h2>
+        </div>
+        <p>下列为当前常备曲目。实际演出可从中组合，也可提前沟通指定曲目与编排方式。</p>
+      </div>
+
+      <div class="library-toolbar reveal">
+        <div class="filter-row" role="group" aria-label="按曲目风格筛选">
+          <button class="filter-button active" data-filter="all">全部 <span>60</span></button>
+          <button class="filter-button" data-filter="traditional">传统名曲 <span>08</span></button>
+          <button class="filter-button" data-filter="regional">流派代表 <span>06</span></button>
+          <button class="filter-button" data-filter="contemporary">现代创作 <span>08</span></button>
+          <button class="filter-button" data-filter="wedding">婚礼喜宴 <span>07</span></button>
+          <button class="filter-button" data-filter="elegant">国风雅韵 <span>10</span></button>
+          <button class="filter-button" data-filter="heroic">武侠燃场 <span>09</span></button>
+          <button class="filter-button" data-filter="classic">流行经典 <span>06</span></button>
+          <button class="filter-button" data-filter="lively">轻快互动 <span>06</span></button>
+        </div>
+        <label class="song-search">
+          <span aria-hidden="true">⌕</span>
+          <input type="search" id="songSearch" placeholder="搜索曲目名称" aria-label="搜索曲目名称">
+        </label>
+      </div>
+
+      <div class="library-status">
+        <p>当前显示 <b id="resultCount">60</b> 首</p>
+        <p id="activeCategory">全部曲目</p>
+      </div>
+      <div class="song-grid" id="songGrid" aria-live="polite"></div>
+      <p class="library-disclaimer">＊ 传统名曲、流派代表及现代创作曲目需结合演出版本、现场时长与准备周期提前确认。</p>
+      <div class="empty-state" id="emptyState" hidden>
+        <span>⌕</span>
+        <h3>暂未找到这首曲目</h3>
+        <p>可以更换关键词，或提前沟通定制曲目。</p>
+      </div>
+    </section>
+
+    <section class="setlist-guide section section-dark">
+      <div class="section-head reveal">
+        <div><p class="section-kicker">SETLIST SUGGESTIONS</p><h2>三种歌单思路</h2></div>
+        <p>不确定怎么选也没关系。<br>先从活动气质出发，再精确到每首曲子。</p>
+      </div>
+      <div class="setlist-grid">
+        <article class="setlist-card reveal">
+          <span>01 · CLASSIC</span>
+          <h3>经典古筝</h3>
+          <p>渔舟唱晚 · 高山流水 · 出水莲 · 将军令</p>
+          <small>适合文化活动、艺术空间、正式宴会</small>
+        </article>
+        <article class="setlist-card reveal">
+          <span>02 · WEDDING</span>
+          <h3>温柔浪漫</h3>
+          <p>金玉良缘 · 传奇 · 甜蜜蜜 · 如愿</p>
+          <small>适合迎宾、仪式暖场、宾客入席</small>
+        </article>
+        <article class="setlist-card reveal">
+          <span>03 · ORIENTAL</span>
+          <h3>东方雅韵</h3>
+          <p>青花瓷 · 兰亭序 · 声声慢 · 春不晚</p>
+          <small>适合品牌活动、茶会、文化空间</small>
+        </article>
+        <article class="setlist-card reveal">
+          <span>04 · CELEBRATION</span>
+          <h3>热闹开场</h3>
+          <p>好日子 · 万疆 · 云宫迅音 · 霍元甲</p>
+          <small>适合商场庆典、开幕、节庆活动</small>
+        </article>
+      </div>
+    </section>
+
+    <section class="repertoire-cta">
+      <div class="reveal">
+        <p class="section-kicker">A SETLIST FOR YOUR MOMENT</p>
+        <h2>选好喜欢的曲目，<br>再一起把现场想完整。</h2>
+        <a class="button button-gold" href="index.html?contact=1">沟通曲目与档期 <i>↗</i></a>
+      </div>
+      <a class="back-home" href="index.html"><span>←</span> 返回个人主页</a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="brand footer-brand"><span class="brand-mark">梦</span><span><b>马梦雨</b><small>GUZHENG ARTIST</small></span></div>
+    <p>曲目会持续更新 · 指定曲目请提前沟通</p>
+    <p>© <span id="year"></span> MA MENGYU. ALL RIGHTS RESERVED.</p>
+  </footer>
+  <script src="script.js"></script>
+  <script src="repertoire.js"></script>
+</body>
+</html>
