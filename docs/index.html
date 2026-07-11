@@ -171,6 +171,24 @@
       </div>
     </section>
 
+    <section class="wardrobe-library section" id="wardrobe-library" aria-labelledby="wardrobe-library-title">
+      <div class="wardrobe-library-head reveal">
+        <div>
+          <p class="section-kicker">THE COMPLETE COLLECTION · 53 LOOKS</p>
+          <h2 id="wardrobe-library-title">完整衣柜，<br>慢慢挑选。</h2>
+        </div>
+        <div class="wardrobe-library-note">
+          <p>这里收录全部服装造型。点击任意照片即可放大查看，记下图片编号后，可在沟通时快速确认您偏好的演出造型。</p>
+          <span>CLICK TO PREVIEW · NOTE THE LOOK NO.</span>
+        </div>
+      </div>
+      <div class="wardrobe-library-status reveal">
+        <span>ALL LOOKS</span><b>53</b><span>套可选造型</span>
+        <p>礼服 · 旗袍 · 汉服 · 主题妆造</p>
+      </div>
+      <div class="wardrobe-library-grid" id="wardrobeGallery" aria-label="小雨老师完整服装图集"></div>
+    </section>
+
     <section class="process section section-dark">
       <div class="section-head reveal">
         <div><p class="section-kicker">COLLABORATION FLOW</p><h2>合作很简单</h2></div>
@@ -238,6 +256,16 @@
   </div>
   <div class="panel-backdrop"></div>
   <div class="toast" role="status">已复制</div>
+
+  <div class="look-lightbox" id="lookLightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="服装造型预览">
+    <button class="look-lightbox-close" type="button" aria-label="关闭预览">×</button>
+    <button class="look-lightbox-arrow look-lightbox-prev" type="button" aria-label="上一张">←</button>
+    <figure>
+      <img id="lightboxImage" src="" alt="">
+      <figcaption><span id="lightboxNumber">LOOK 01</span><b>小雨老师 · 可选演出造型</b></figcaption>
+    </figure>
+    <button class="look-lightbox-arrow look-lightbox-next" type="button" aria-label="下一张">→</button>
+  </div>
 
   <script src="script.js"></script>
 </body>

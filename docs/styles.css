@@ -15,6 +15,7 @@
 html { scroll-behavior: smooth; }
 body { margin: 0; color: var(--ink); background: var(--paper); font-family: var(--sans); }
 body.panel-open { overflow: hidden; }
+body.lightbox-open { overflow: hidden; }
 button, a { font: inherit; }
 button { cursor: pointer; }
 a { color: inherit; text-decoration: none; }
@@ -121,6 +122,38 @@ img, video { display: block; width: 100%; }
 .wardrobe-grid figcaption { position: absolute; right: 0; bottom: 0; left: 0; padding: 48px 18px 17px; color: #fff; background: linear-gradient(transparent, rgba(0,0,0,.76)); font: 14px var(--serif); letter-spacing: .08em; }
 .wardrobe-grid figcaption span { display: block; margin-bottom: 6px; color: var(--gold-light); font: 9px var(--sans); letter-spacing: .18em; }
 
+.wardrobe-library { overflow: hidden; background: #f6f0e6; }
+.wardrobe-library-head { display: grid; grid-template-columns: 1.1fr .65fr; gap: 8vw; align-items: end; }
+.wardrobe-library h2 { margin: 0; font: 500 clamp(42px,5.5vw,82px)/1.2 var(--serif); letter-spacing: .02em; }
+.wardrobe-library-note { padding: 0 0 11px 28px; border-left: 1px solid #c8a876; }
+.wardrobe-library-note p { margin: 0; color: #6d645a; font: 14px/2 var(--serif); }
+.wardrobe-library-note span { display: block; margin-top: 16px; color: #a37a43; font-size: 9px; letter-spacing: .17em; }
+.wardrobe-library-status { display: flex; align-items: baseline; gap: 10px; margin: 72px 0 30px; padding: 18px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.wardrobe-library-status > span { color: #927452; font-size: 10px; letter-spacing: .18em; }
+.wardrobe-library-status b { color: #4c3823; font: 500 28px var(--serif); }
+.wardrobe-library-status p { margin: 0 0 0 auto; color: #8b7a64; font: 11px var(--serif); letter-spacing: .11em; }
+.wardrobe-library-grid { display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: 14px; }
+.wardrobe-look { position: relative; min-height: 300px; margin: 0; padding: 0; overflow: hidden; color: #fff; background: #d8ccbc; border: 0; cursor: zoom-in; text-align: left; }
+.wardrobe-look:nth-child(3n+1) { min-height: 430px; }
+.wardrobe-look:nth-child(7n+3) { grid-row: span 2; }
+.wardrobe-look img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s cubic-bezier(.2,.7,.2,1), filter .5s; }
+.wardrobe-look:hover img { transform: scale(1.055); filter: saturate(1.08); }
+.wardrobe-look::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg,transparent 55%,rgba(14,10,7,.72)); opacity: .78; transition: .35s; }
+.wardrobe-look:hover::after { opacity: 1; }
+.wardrobe-look > span { position: absolute; z-index: 1; right: 15px; bottom: 14px; left: 15px; display: flex; align-items: center; justify-content: space-between; font: 12px var(--serif); letter-spacing: .08em; }
+.wardrobe-look > span b { color: var(--gold-light); font: 9px var(--sans); font-weight: 400; letter-spacing: .14em; }
+.wardrobe-look > span i { color: rgba(255,255,255,.85); font: 10px var(--serif); font-style: normal; }
+.look-lightbox { position: fixed; z-index: 401; inset: 0; display: grid; grid-template-columns: 70px minmax(0,1fr) 70px; align-items: center; gap: 12px; padding: 4vh 5vw; visibility: hidden; opacity: 0; color: white; background: rgba(13,10,8,.95); backdrop-filter: blur(12px); transition: opacity .3s, visibility .3s; }
+.look-lightbox.open { visibility: visible; opacity: 1; }
+.look-lightbox figure { position: relative; display: grid; place-items: center; height: 92vh; margin: 0; }
+.look-lightbox img { max-width: 100%; max-height: calc(92vh - 48px); object-fit: contain; box-shadow: 0 28px 90px rgba(0,0,0,.45); }
+.look-lightbox figcaption { position: absolute; right: 0; bottom: 0; left: 0; display: flex; justify-content: space-between; padding: 18px 20px; color: rgba(255,255,255,.86); background: linear-gradient(transparent,rgba(0,0,0,.82)); font: 13px var(--serif); }
+.look-lightbox figcaption span { color: var(--gold-light); font: 10px var(--sans); letter-spacing: .18em; }
+.look-lightbox-close, .look-lightbox-arrow { color: white; background: transparent; border: 0; cursor: pointer; }
+.look-lightbox-close { position: absolute; top: 22px; right: 28px; z-index: 2; font-size: 37px; font-weight: 200; }
+.look-lightbox-arrow { width: 54px; height: 54px; border: 1px solid rgba(255,255,255,.35); border-radius: 50%; font-size: 25px; transition: .25s; }
+.look-lightbox-arrow:hover { color: #17130f; background: var(--gold-light); border-color: var(--gold-light); }
+
 .process-list { display: grid; grid-template-columns: repeat(4,1fr); padding: 0; margin: 0; list-style: none; border-top: 1px solid rgba(255,255,255,.13); border-left: 1px solid rgba(255,255,255,.13); }
 .process-list li { min-height: 240px; padding: 30px; border-right: 1px solid rgba(255,255,255,.13); border-bottom: 1px solid rgba(255,255,255,.13); }
 .process-list span { color: var(--gold); font-size: 10px; }
@@ -201,6 +234,12 @@ footer p { font-size: 9px; letter-spacing: .16em; }
   .look-gallery img { height: 290px; }
   .wardrobe-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
   .wardrobe-grid figure { min-height: 340px; }
+  .wardrobe-library-head { grid-template-columns: 1fr; gap: 30px; }
+  .wardrobe-library-note { padding: 0 0 0 20px; }
+  .wardrobe-library-status { margin-top: 48px; }
+  .wardrobe-library-grid { grid-template-columns: repeat(3, minmax(0,1fr)); gap: 9px; }
+  .wardrobe-look { min-height: 250px; }
+  .wardrobe-look:nth-child(3n+1) { min-height: 330px; }
   .process-list { grid-template-columns: 1fr 1fr; }
   .process-list li { min-height: 200px; padding: 22px; }
   .process-list h3 { margin-top: 50px; }
@@ -221,6 +260,17 @@ footer p { font-size: 9px; letter-spacing: .16em; }
   .look-gallery { gap: 9px; }
   .look-gallery figcaption { font-size: 11px; }
   .wardrobe-grid figure { min-height: 275px; }
+  .wardrobe-library-status { gap: 7px; }
+  .wardrobe-library-status p { display: none; }
+  .wardrobe-library-grid { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 7px; }
+  .wardrobe-look { min-height: 230px; }
+  .wardrobe-look:nth-child(3n+1) { min-height: 290px; }
+  .wardrobe-look:nth-child(7n+3) { grid-row: span 1; }
+  .look-lightbox { grid-template-columns: 42px minmax(0,1fr) 42px; gap: 3px; padding: 3vh 8px; }
+  .look-lightbox figure { height: 94vh; }
+  .look-lightbox-arrow { width: 36px; height: 36px; font-size: 18px; }
+  .look-lightbox figcaption { display: block; padding: 14px 12px; font-size: 11px; }
+  .look-lightbox figcaption b { display: block; margin-top: 6px; }
   .process-list { grid-template-columns: 1fr; }
   .process-list li { min-height: 170px; }
   .process-list h3 { margin-top: 35px; }
